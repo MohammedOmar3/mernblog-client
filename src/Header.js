@@ -12,7 +12,7 @@ export default function Header() {
         setUserInfo(userInfo);
       });
     });
-  }, []);
+  }, [userInfo, setUserInfo]);
 
   function logout(){
     fetch('https://mern-blog-202bd7c78370.herokuapp.com/logout', {

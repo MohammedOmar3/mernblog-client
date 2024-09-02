@@ -9,7 +9,7 @@ export default function IndexPage(){
                 setPosts(posts);
             });
         });
-    }, []);
+    }, [posts]);
     return (
         <>
             {posts.length > 0 && posts.map(post => (

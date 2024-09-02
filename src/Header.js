@@ -5,7 +5,7 @@ import { UserContext } from './UserContext';
 export default function Header() {
   const {setUserInfo, userInfo} = useContext(UserContext);
   useEffect(() => {
-    fetch('https://mern-blog-202bd7c78370.herokuapp.com/profile', {
+    fetch(`${process.env.REACT_APP_API_URL}/profile`, {
       credentials: 'include',
     }).then(response => {
       response.json().then(userInfo => {
@@ -15,7 +15,7 @@ export default function Header() {
   }, [userInfo, setUserInfo]);
 
   function logout(){
-    fetch('https://mern-blog-202bd7c78370.herokuapp.com/logout', {
+    fetch(`${process.env.REACT_APP_API_URL}/logout`, {
       credentials: 'include',
       method: 'POST',
     });

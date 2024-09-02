@@ -8,7 +8,7 @@ export default function PostPage(){
     const {userInfo} = useContext(UserContext);
     const {id} = useParams();
     useEffect(() => {
-        fetch(`https://mern-blog-202bd7c78370.herokuapp.com/post/${id}`)
+        fetch(`${process.env.REACT_APP_API_URL}/${id}`)
             .then(response => {
                 response.json().then(postInfo => {
                     setPostInfo(postInfo);

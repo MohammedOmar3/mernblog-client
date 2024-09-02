@@ -16,7 +16,7 @@ export default function CreatePost(){
         data.set('file', files[0]);
         ev.preventDefault();
         console.log(files)
-        const response = await fetch('https://mern-blog-202bd7c78370.herokuapp.com/post', {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/products`, {
             method: 'POST',
             body: data,
             credentials: 'include'

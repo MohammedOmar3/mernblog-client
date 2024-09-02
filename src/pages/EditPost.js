@@ -11,7 +11,7 @@ export default function EditPost(){
     const [redirect, setRedirect] = useState(false);
 
     useEffect(() => {
-        fetch('https://mern-blog-202bd7c78370.herokuapp.com/'+id)
+        fetch(`${process.env.REACT_APP_API_URL}/+id`)
         .then(response => {
             response.json().then(postInfo => {
                 setTitle(postInfo.title);

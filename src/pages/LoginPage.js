@@ -9,7 +9,7 @@ export default function LoginPage(){
     const {setUserInfo} = useContext(UserContext);
     async function login(ev){
         ev.preventDefault();
-        const response = await fetch('https://mern-blog-202bd7c78370.herokuapp.com/login', {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/login`, {
             method: 'POST',
             body: JSON.stringify({username, password}),
             headers: {'Content-Type':'application/json'},
